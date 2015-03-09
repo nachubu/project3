@@ -1,0 +1,23 @@
+$(document).ready(function(){
+
+
+
+
+	$('#waybill_code').on('keyup', function(e){
+	
+		var ln   = $(this).val().length;
+		if(ln > 6){
+			p = $(this).val();
+			var code = $(this).val();
+			$.post('search', {code:code}, function(data){
+				$('#content').html(data);
+			});
+		}else{
+		     alert(4);
+		}
+		
+
+	});
+
+});
+

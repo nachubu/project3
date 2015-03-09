@@ -1,0 +1,1 @@
+/var/www/CDS/app/views/posts/index.blade.php
