@@ -411,45 +411,45 @@
 
 <script>
 
-$(document).ready(function(){
+// $(document).ready(function(){
 
-    $('#orderNo').on('keyup',function(){
-	var orderNo  = $(this).val();
-	var wC       = $('#waybill_code').val();
-	$.post('orderNo', {orderNo: orderNo, wC:wC}, function(data){
-		if(data === "not"){
-			$('#btNext').hide();	
-		}else{
-			$('#btNext').show();
-		}
-	});
-    });	
+//     $('#orderNo').on('keyup',function(){
+// 	var orderNo  = $(this).val();
+// 	var wC       = $('#waybill_code').val();
+// 	$.post('orderNo', {orderNo: orderNo, wC:wC}, function(data){
+// 		if(data === "not"){
+// 			$('#btNext').hide();	
+// 		}else{
+// 			$('#btNext').show();
+// 		}
+// 	});
+//     });	
 
-    $('#item_actual').on('blur', function(){
-        var item_actual   = $(this).val();
-        var item_weight   = $('#item_weight').val();
-        var excess_weight = (item_weight - item_actual);
-        $('#item_excess').val(excess_weight);
-    });
+//     $('#item_actual').on('blur', function(){
+//         var item_actual   = $(this).val();
+//         var item_weight   = $('#item_weight').val();
+//         var excess_weight = (item_weight - item_actual);
+//         $('#item_excess').val(excess_weight);
+//     });
 
-    $('#item_weight').on('blur', function(){
+//     $('#item_weight').on('blur', function(){
         
-        var item_weight = $(this).val();
-        var from        = $('#lfrom').val();
-        var to          = $('#lto').val();
+//         var item_weight = $(this).val();
+//         var from        = $('#lfrom').val();
+//         var to          = $('#lto').val();
 
-        $.post('weightCost', {item_weight:item_weight, from:from, to:to}, function(cost){
-            $('#cost').val(cost);
-        });
-    });
+//         $.post('weightCost', {item_weight:item_weight, from:from, to:to}, function(cost){
+//             $('#cost').val(cost);
+//         });
+//     });
 
-    $('#btNext').on('click', function(){
-        $('#primaryInfo').fadeOut(100,function(){
-            $('#all').fadeIn(1000);
-             $('#myWizard').easyWizard({submitButtonClass:"btn btn-success", buttonsClass: "btn btn-primary"});
-        });
-    });
+//     $('#btNext').on('click', function(){
+//         $('#primaryInfo').fadeOut(100,function(){
+//             $('#all').fadeIn(1000);
+//              $('#myWizard').easyWizard({submitButtonClass:"btn btn-success", buttonsClass: "btn btn-primary"});
+//         });
+//     });
    
 
-});
+// });
 </script>

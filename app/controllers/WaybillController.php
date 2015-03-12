@@ -28,20 +28,22 @@ class WaybillController extends BaseController {
 
     public function autoSearch() {
         $term = Request::get('term');
-        $locations = Tarrif::where('origin', 'LIKE', '%' . $term . '%')->distinct()->get()->take(1);
+        $locations = Region::where('name', 'LIKE', '%' . $term . '%')->distinct()->get()->take(1);
+        //$locations = Tarrif::where('origin', 'LIKE', '%' . $term . '%')->distinct()->get()->take(1);
         $rx = array();
         foreach ($locations as $l) {
-            $rx['name'] = $l->origin;
+            $rx['name'] = $l->name;
         }
         return Response::json($rx);
     }
 
     public function autoSearchLto() {
         $term = Request::get('term');
-        $locations = Tarrif::where('destination', 'LIKE', '%' . $term . '%')->distinct()->get()->take(1);
+        $locations = Region::where('name', 'LIKE', '%' . $term . '%')->distinct()->get()->take(1);
+        //$locations = Tarrif::where('destination', 'LIKE', '%' . $term . '%')->distinct()->get()->take(1);
         $rx = array();
         foreach ($locations as $l) {
-            $rx['name'] = $l->destination;
+            $rx['name'] = $l->name;
         }
         return Response::json($rx);
     }
@@ -61,32 +63,33 @@ class WaybillController extends BaseController {
         $lf = Input::get('lf');
         $lt = Input::get('lt');
 
-        $c1 = Tarrif::where('origin', $lf)->count();
-        $c2 = Tarrif::where('destination', $lt)->count();
+        $c1 = Region::where('name', $lf)->count();
+        $c2 = Region::where('name', $lt)->count();
 
-        $c = Tarrif::whereRaw("origin = ? and destination = ?", array($lf, $lt))->count();
+        $c = Tarrifs::where("destination","1")->count();
 
         if ($c == 0) {
-            return;
+           return $r = "no Tarrif contact Adminstrator!";
         }
 
         if ($c1 == 0 || $c2 == 0) {
-            
+        return $r = "origin and destination does not exist Tarrif contact Adminstrator!";
         } else {
             $wc = WC::where('code', $code)->count();
 
             if ($wc == 0) {
-                
+                return $r = "Invalid Waybill Code contact Adminstrator!";
             } else {
 
                 //$cn = Waybill::where('code', $code)->count();
-		$cn  = WC::where('code', $code)->first()->used;
+		        $cn  = WC::where('code', $code)->first();
 
 		
 
-                if ($cn == 1) {
-                    //$waybill = Waybill::where('code', $code)->first();
-                    //return View::make('waybills.filled_form', compact('waybill'));
+                if ($cn->used == 1) {
+                    // return $r = "waybill used!!";
+                    // $waybill = Waybill::where('code', $code)->first();
+                    return View::make('waybills.filled_form');
                 } else {
                     // $newWaybill = Waybill::create(array(
                     // 			"code" => $code

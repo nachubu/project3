@@ -55,9 +55,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'cds_db',
-			'username'  => 'root',
-			'password'  => '',
+			'database'  => 'cds',
+			'username'  => 'cds',
+			'password'  => '4YjxvhC7btnPSxXq',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

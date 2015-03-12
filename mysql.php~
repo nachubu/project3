@@ -1,0 +1,27 @@
+<?php 
+$servername = "localhost";
+$username = "root";
+$password = "kamu#gisha@1991";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=myDB", $username, $password);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully"; 
+    }
+catch(PDOException $e)
+    {
+    echo "Connection failed: " . $e->getMessage();
+    }
+echo "\n";
+//mysql while loop
+$x = 1;
+$w = 100001;
+while($x <= 50) {
+   echo "INSERT INTO `cds`.`waybillcodes` (`id`, `code`, `used`) VALUES (NULL,"."'".($w+$x)."'"." , '0')"."\n";
+   $x++;
+}
+
+
+$conn = null;
+?>
