@@ -19,14 +19,7 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-6" >
-
-                                    @if(isset($emsg))
-                                      <div class="alert alert-danger"><b>{{$emsg}}</b></div>
-                                    @end
-
-                                    @if(isset($msg))
-                                      <div class="alert alert-success"><b>{{$msg}}</b></div>
-                                    @end        
+       
                                                                
                                     {{Form::open(array("url"=>'user/add', "class"=>"form-horizontal", "role"=>"form"))}}
                                       <div class="form-group">
@@ -47,6 +40,18 @@
                                           <input class="form-control" type="text" name="email" />
                                         </div>
                                       </div> 
+                                      <div class="form-group">
+                                        <label class="col-sm-5 control-label">Password</label> 
+                                        <div class="col-sm-5">
+                                          <input class="form-control" type="password" name="password" />
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <label class="col-sm-5 control-label">Repeat Password</label> 
+                                        <div class="col-sm-5">
+                                          <input class="form-control" type="password" name="cpassword" />
+                                        </div>
+                                      </div>
                                       <div class="form-group">
                                         <label class="col-sm-5 control-label">Position/Role</label> 
                                         <div class="col-sm-5">

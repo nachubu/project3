@@ -9,18 +9,18 @@ class UserController extends BaseController{
 		$lastname  = Input::get('lastname');
 		$email     = Input::get('email');
 		$role      = Input::get('role');
-
-		$user  = User::where('firstname', $firstname)->count();
+		$password  = Input::get('password');
+		$user  = User::where('email', $email)->count();
 		if($user == 1){
 			return View::make('users.create')->with('emsg', 'User already exist!');
 		}else{
-			$usr = User::create(array(
-					"firstname" => $firstname,
-					"lastname"  => $lastname,
-					"email"     => $email,
-					"password"  => Hash::make('1234'),
-					"role"      => $role
-				));
+			$u = New User;
+			$u->fname = $firstname;
+			$u->lname = $lastname;
+			$u->email = $email;
+			$u->password = Hash::make($password);
+			$u->role = $role;
+			$u->save();
 			return View::make('users.create')->with('msg', 'Successfully added');	
 
 		}
