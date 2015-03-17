@@ -25,4 +25,9 @@ class UserController extends BaseController{
 
 		}
 	}
+
+	public function users(){
+		$users = User::all();
+		return View::make("users.users",compact('users'));
+	}
 }

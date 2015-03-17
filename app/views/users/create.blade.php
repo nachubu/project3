@@ -57,12 +57,12 @@
                                         <div class="col-sm-5">
                                          <select class="form-control" name="role">
                                           <option></option>
-                                           
                                            <option value="Approver">Approver</option>
-                                           <option value="Receiver">Receiver</option>
+                                           <option value="Zone Manager">Zone Manager</option>
+                                           <option value="Operation Manager">Operation Manager</option>
+                                           <option value="Account Manager">Account Manager</option>
                                            <option value="Customer">Customer</option>
-                                            <option value="Manager">Manager</option>
-                                           
+                                           <option value="Manager">Admin</option>
                                         </select>  
                                         </div>
                                       </div> 

@@ -15,12 +15,13 @@
             <!-- Advanced Tables -->
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Waybills
+                    Zone Managers
                     <span class="pull-right">
                         <select id="select-waybills">
                             <option value="all">     All</option>
                             <option value="regions"> By Company</option>
                             <option value="company"> By regions</option>
+                <option value="reports"> By reports</option>
                         </select>
                     </span>
                 </div>
@@ -32,25 +33,24 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>waybill code</th>
-                                        <th>receive date</th>
-                                        <th>deliver date</th>
-                                        <th>status</th>
-                                        <th>operations</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Create At</th>
+                                        <th>Update At</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php $i = 1; ?>
-                                    @foreach($waybills as $waybill)
+                                    @foreach($zmanagers as $user)
                                     <tr class="odd gradeX">
                                         <td>{{$i}}</td>
-                                        <td>{{$waybill->code}}</td>
-                                        <td>{{$waybill->date_pickup}}</td>
-                                        <td>{{$waybill->date_delivery}}</td>
-                                        <td>{{Waybill::getStatus($waybill->code)}}</td>
+                                        <td>{{$user->fname}}</td>
+                                        <td>{{$user->lname}}</td>
+                                        <td>{{$user->created_at}}</td>
+                                        <td>{{$user->created_at}}</td>
                                         <td>
                                             <button class="btn btn-xs btn-success" title="Edit waybill"><i class="fa fa-pencil"></i></button>
-                                            <a href='{{url("waybill/show/{$waybill->id}")}}'><button class="btn btn-xs btn-primary" title="view waybill"><i class="fa fa-file-o"></i></button></a>
+                                            <button class="btn btn-xs btn-primary" title="view waybill"><i class="fa fa-file-o"></i></button>
                                             <button class="btn btn-xs btn-danger" title="delete waybill"><i class="fa fa-trash-o"></i></button>
                                             <button class="btn btn-xs btn-info" title="waybill log"><i class="fa fa-list-alt"></i></button>
                                         </td>
@@ -58,6 +58,7 @@
                                     <?php $i++; ?>
                                     @endforeach
                                 </tbody>
+                             
                             </table>
                         </div>
                     </div>

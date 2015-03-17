@@ -47,10 +47,10 @@
                 <!-- main dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <span class="top-label label label-danger">3</span><i class="fa fa-envelope fa-3x"></i>
+                        <!-- <span class="top-label label label-danger">3</span><i class="fa fa-envelope fa-3x"></i> -->
                     </a>
                     <!-- dropdown-messages -->
-                    <ul class="dropdown-menu dropdown-messages">
+                    <!-- <ul class="dropdown-menu dropdown-messages">
                         <li>
                             <a href="#">
                                 <div>
@@ -93,13 +93,13 @@
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
-                    </ul>
+                    </ul> -->
                     <!-- end dropdown-messages -->
                 </li>
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <span class="top-label label label-success">4</span>  <i class="fa fa-tasks fa-3x"></i>
+                        <!-- <span class="top-label label label-success">4</span>  <i class="fa fa-tasks fa-3x"></i> -->
                     </a>
                     <!-- dropdown tasks -->
                     <ul class="dropdown-menu dropdown-tasks">
@@ -179,7 +179,7 @@
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <span class="top-label label label-warning">5</span>  <i class="fa fa-bell fa-3x"></i>
+                        <!-- <span class="top-label label label-warning">5</span>  <i class="fa fa-bell fa-3x"></i> -->
                     </a>
                     <!-- dropdown alerts-->
                     <ul class="dropdown-menu dropdown-alerts">
@@ -244,12 +244,12 @@
                     </a>
                     <!-- dropdown user-->
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i>User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i>Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                       <!--  <li><a href="#"><i class="fa fa-user fa-fw"></i>User Profile</a>
+                        </li> -->
+                        <!-- <li><a href="#"><i class="fa fa-gear fa-fw"></i>Settings</a>
+                        </li> -->
+                       <!--  <li class="divider"></li> -->
+                        <li><a href="{{url('logout')}}"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
                         </li>
                     </ul>
                     <!-- end dropdown-user -->

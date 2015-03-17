@@ -7,7 +7,9 @@
 		"laravel/framework": "4.2.*",
 		"way/generators": "2.*",
 		"maatwebsite/excel": "1.*",
-		"xethron/migrations-generator": "1.2.2"
+		"xethron/migrations-generator": "1.2.2",
+		""
+		"barryvdh/laravel-dompdf": "0.4.*"
 	},
 	"autoload": {
 		"classmap": [

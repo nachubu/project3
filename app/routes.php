@@ -134,9 +134,6 @@ Route::get('importDB', function() {
         return "Okay!!! imported . . . .";
     });
 });
-
-
-
 //############################################
 
 Route::get('/', 'LoginController@login');
@@ -157,6 +154,20 @@ Route::get('waybills', 'WaybillController@index');
 Route::get('user/add', 'UserController@create');
 Route::post('user/add', 'UserController@store');
 Route::get('waybill/show/{id}', 'WaybillController@show');
+Route::get('users', 'UserController@users');
+
+
+//waybills
+
+
+//managers ManagerController
+Route::get('manager/zone','ManagerController@zone');
+Route::get('manager/account','ManagerController@account');
+Route::get('manager/operation','ManagerController@operation');
+Route::get('manager/zone/waybill','ManagerController@zwaybills');
+
+//dashboard for all users according to roles
+Route::get('manager/zone/dashboard','ManagerController@zoneIndex');
 
 
 

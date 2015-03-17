@@ -36,11 +36,21 @@
                             </li>
                         </ul>
                         <!-- second-level-items -->
+                          <a href="#"><i class="fa fa-users"></i> Managers <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{url('manager/zone')}}"><i class="fa fa-user"></i> Zone Manager</a>
+                            </li>
+                            <li>
+                                <a href="{{url('manager/account')}}"><i class="fa fa-user"></i> Operation Manager</a>
+                            </li>
+                            <li>
+                                <a href="{{url('manager/account')}}"><i class="fa fa-user"></i> Account Manager</a>
+                            </li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="{{url('logout')}}"> <i class="fa fa-power-off"></i> logout </a>
-                    </li>
-                    @else
+                    
+                  @endif
                     <li>
                         <a href="#"><i class="fa fa-file fa-fw"></i> Waybill <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -56,7 +66,7 @@
                     <li>
                         <a href="{{url('logout')}}"> <i class="fa fa-power-off"></i> logout </a>
                     </li>
-                    @endif
+                    
                 </ul>
                 <!-- end side-menu -->
             </div>
